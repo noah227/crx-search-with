@@ -7,8 +7,17 @@
         "build": "vue-cli-service build",
         "build-watch": "vue-cli-service build --watch"
     },
+    "keywords": [
+        "Chrome Extension",
+        "@vxt/cli",
+        "contextMenus",
+        "storage",
+        "background",
+        "options"
+    ],
     "dependencies": {
         "core-js": "^3.8.3",
+        "md5": "^2.3.0",
         "vue": "^3.2.13",
         "vue-router": "^4.0.3",
         "vuex": "^4.0.0"
