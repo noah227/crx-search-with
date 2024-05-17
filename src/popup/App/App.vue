@@ -1,12 +1,13 @@
 <template>
     <div>
-        <div>this is popup page</div>
-        <img src="@/assets/logo.png" alt="">
-        <div>popup的输出在自己的世界里，对着popup的弹出右键可以审查元素。</div>
-        <div>popup has it's isolated running world, right click to trigger context menu and inspect.</div>
+        <a :href="optionsPage" target="_blank">
+            <img src="@/assets/logo.png" alt="">
+        </a>
     </div>
 </template>
-
+<script lang="ts" setup>
+const optionsPage = `chrome-extension://${chrome.runtime.id}/options.html`
+</script>
 <style lang="scss">
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -27,5 +28,8 @@ nav {
             color: #42b983;
         }
     }
+}
+img {
+    width: 48px;
 }
 </style>
