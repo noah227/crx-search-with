@@ -1,0 +1,42 @@
+{
+    "$schema": "https://json.schemastore.org/chrome-manifest",
+    "manifest_version": 3,
+    "name": "__MSG_appName__",
+    "description": "__MSG_appDesc__",
+    "version": "0.0.1",
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "options_page": "options.html",
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'",
+        "sandbox": "sandbox allow-scripts allow-modals allow-forms allow-popups; script-src 'self' 'unsafe-eval' 'unsafe-inline'; object-src 'self';"
+    },
+    "permissions": [
+        "contextMenus",
+        "storage"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "js/content.js",
+                "js/chunk-vendors.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ],
+    "background": {
+        "service_worker": "js/service_worker.js",
+        "type": "module"
+    },
+    "default_locale": "zh_CN",
+    "icons": {
+        "16": "assets/logo.png",
+        "32": "assets/logo.png",
+        "48": "assets/logo.png",
+        "128": "assets/logo.png"
+    }
+}
