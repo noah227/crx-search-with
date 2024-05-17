@@ -34,15 +34,17 @@ const initContextMenusEvents = () => {
         const targetUrl = engine.pattern.replace("%s", text)
         if (tab) {
             console.log("创建tab", engine.incognito)
-            // 隐私模式
-            if (engine.incognito) {
-                void chrome.windows.create({
-                    incognito: true,
-                    url: targetUrl
-                })
-            } else {
+            // 如果当前页面是隐私页面，新建页面继承当前页面窗口
+            if(!engine.incognito || tab.incognito) {
                 void chrome.tabs.create({
                     windowId: tab.windowId,
+                    url: targetUrl
+                })
+            }
+            // 隐私模式
+            else {
+                void chrome.windows.create({
+                    incognito: true,
                     url: targetUrl
                 })
             }

@@ -2,7 +2,7 @@
     <div id="options">
         <div>
             <img src="@/assets/logo.png" alt="">
-            <strong id="title">this is options page</strong>
+            <strong id="title">自定义引擎搜索</strong>
             <button @click="addItem">Add</button>
         </div>
         <table id="engine-list">
@@ -57,6 +57,12 @@
             </tr>
             </tbody>
         </table>
+        <br>
+        <li>关于隐私窗体的加载机制说明：</li>
+        <ul>
+            <li>如果当前页面是隐私页面，那么创建tab强制继承当前页面窗体</li>
+            <li>如果已经设置了引擎为隐私模式，那么创建tab强制使用隐私窗体（继承或者创建隐私窗体）</li>
+        </ul>
     </div>
 </template>
 <script lang="ts" setup>
