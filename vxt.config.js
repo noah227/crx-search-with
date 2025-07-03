@@ -17,7 +17,7 @@
  * @type {{pageEntryDirs: TPageEntryDirs, copyItems: TCopyItems, webpackEntry: TWebpackEntry}}
  */
 module.exports = {
-    pageEntryDirs: ["options", "popup"],
+    pageEntryDirs: ["options"],
     copyItems: [
         ["./src/assets", "assets"],
         ["./src/_locales", "_locales"]
